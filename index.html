@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<!--
+  ══════════════════════════════════════════════════════════════
+  حقول قابلة للتعديل – غيّرها هنا فقط / EDITABLE FIELDS
+  ══════════════════════════════════════════════════════════════
+  اسم التطبيق / App name            : الكيان الرقمي (Digital Entity) – الاسم التجاري = اسم الجهة
+  اسم المطوّر / Developer           : الكيان الرقمي (Digital Entity)
+  العنوان / Address                 : [[يلزم تحديد: العنوان البريدي للجهة (السؤال 2)]]
+  البريد / Email                    : [[يلزم تحديد: بريد الخصوصية (السؤال 3)]]
+  الاستضافة / Hosting               : Contabo – فرانكفورت، ألمانيا (أوروبا)
+  آخر تحديث / Last updated          : 6 أكتوبر 2026
+  النسخة / Version                  : v1.1
+  النطاق / Domain                   : alkyan.tech
+  الشعار / Logo                     : ضع ملف logo.png بجانب هذا الملف، ثم استبدل
+                                      التعليق داخل <div class="logo-box"> بتعليمة
+                                      <img src="logo.png" alt="شعار الكيان الرقمي">
+  ══════════════════════════════════════════════════════════════
+-->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<meta name="description" content="سياسة الخصوصية للكيان الرقمي – Privacy Policy for Digital Entity">
+<title>سياسة الخصوصية | الكيان الرقمي</title>
+<style>
+:root{
+  --brand-primary:#0054A6;
+  --brand-link:#3C78B4;
+  --brand-soft:#E6F3FF;
+  --surface:#FFFFFF;
+  --field-bg:#FAFAFA;
+  --field-border:#E8E8E8;
+  --text-main:#1A1A1A;
+  --text-muted:#9E9E9E;
+  --radius-card:16px;
+  --radius-btn:20px;
+  --shadow-soft:0 4px 14px rgba(0,84,166,0.10);
+  --ph-bg:#FFF3B0;
+  --ph-fg:#6B5300;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--surface); color:var(--text-main);
+  font-family:"Cairo","Tajawal","Segoe UI",Tahoma,sans-serif;
+  font-size:17px; line-height:1.9; overflow-x:hidden;
+}
+a{color:var(--brand-link); text-decoration:none}
+a:hover{text-decoration:underline}
+code{
+  background:var(--field-bg); border:1px solid var(--field-border);
+  border-radius:6px; padding:1px 6px; font-size:.9em;
+  direction:ltr; unicode-bidi:embed;
+}
+.skip-link{
+  position:absolute; top:-48px; right:16px;
+  background:var(--brand-primary); color:#fff;
+  padding:10px 16px; border-radius:var(--radius-btn); z-index:50;
+  transition:top .2s ease;
+}
+.skip-link:focus{top:12px}
+
+/* ─── خلفية الدائرة الزخرفية ─── */
+.page{position:relative; min-height:100vh}
+.circle-deco{
+  position:absolute; top:-140px; right:-140px;
+  width:320px; height:320px; border-radius:50%;
+  background:var(--brand-soft); z-index:0; pointer-events:none;
+}
+
+/* ─── الحاوية ─── */
+.wrap{
+  position:relative; z-index:1; max-width:820px;
+  margin:0 auto; padding:32px 20px 72px;
+}
+
+/* ─── زر اللغة ─── */
+.topbar{padding:8px 0 24px; text-align:start}
+button.lang{
+  background:var(--brand-primary); color:#fff; border:0;
+  border-radius:var(--radius-btn); padding:4px 18px; height:44px;
+  font-family:inherit; font-size:.95rem; font-weight:700; cursor:pointer;
+  box-shadow:var(--shadow-soft); transition:opacity .2s ease;
+}
+button.lang:hover{opacity:.9}
+
+/* ─── الترويسة ─── */
+.header{text-align:center; margin:12px 0 40px}
+.header .logo-box{
+  width:96px; height:96px; margin:0 auto 20px;
+  background:var(--surface); border-radius:24px; box-shadow:var(--shadow-soft);
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+}
+.header .logo-box:empty{display:none}
+.header .logo-box img{max-width:100%; max-height:100%; display:block}
+.header h1{
+  margin:0; font-size:1.9rem; font-weight:700; color:var(--brand-primary);
+}
+.header .subtitle{
+  margin:6px 0 0; color:var(--text-muted); font-size:1.05rem;
+}
+.header .updated{
+  margin:10px 0 0; color:var(--text-muted); font-size:.9rem;
+}
+
+/* ─── فهرس المحتويات (chips) ─── */
+.toc{background:var(--brand-soft); border-radius:var(--radius-card); padding:18px 20px; margin:0 0 32px}
+.toc h2{margin:0 0 12px; font-size:1.05rem; color:var(--brand-primary)}
+.toc ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px}
+.toc li{display:inline}
+.toc a{
+  display:inline-block; background:var(--surface); color:var(--brand-primary);
+  border:1px solid var(--field-border); border-radius:var(--radius-btn);
+  padding:6px 14px; font-size:.9rem; transition:all .2s ease;
+}
+.toc a:hover{background:var(--brand-primary); color:#fff; text-decoration:none}
+
+/* ─── الأقسام (كروت) ─── */
+section{
+  background:var(--surface); border:1px solid var(--field-border);
+  border-radius:var(--radius-card); box-shadow:var(--shadow-soft);
+  padding:26px 28px; margin:0 0 24px; scroll-margin-top:16px;
+}
+section h2{
+  display:flex; align-items:center; gap:12px;
+  margin:0 0 16px; font-size:1.35rem; font-weight:700; color:var(--brand-primary);
+}
+section h2 .num{
+  flex:0 0 auto; width:34px; height:34px; border-radius:50%;
+  background:var(--brand-soft); color:var(--brand-primary);
+  font-weight:700; font-size:1rem;
+  display:inline-flex; align-items:center; justify-content:center;
+  border:1px solid var(--field-border);
+}
+section h2 .icon{flex:0 0 auto; width:26px; height:26px; color:var(--brand-primary)}
+section h3{margin:18px 0 8px; font-size:1.08rem; font-weight:700}
+section p,section li{margin:8px 0}
+section ul,section ol{padding-inline-start:24px}
+section li{margin:6px 0}
+
+/* ─── البطاقة الفرعية ─── */
+.card{
+  background:var(--field-bg); border:1px solid var(--field-border);
+  border-radius:calc(var(--radius-card) - 4px); padding:16px 20px; margin:12px 0;
+}
+
+/* ─── الجداول ─── */
+.table-scroll{overflow-x:auto}
+table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  margin:12px 0; font-size:.95rem; border:1px solid var(--field-border);
+  border-radius:var(--radius-card); overflow:hidden;
+}
+thead th{
+  background:var(--brand-primary); color:#fff; text-align:start;
+  padding:10px 14px; font-weight:700;
+}
+tbody td{padding:10px 14px; border-top:1px solid var(--field-border); vertical-align:top}
+tbody tr:nth-child(even){background:var(--field-bg)}
+tbody tr:nth-child(odd){background:var(--surface)}
+
+/* ─── الـ placeholders المتبقية ─── */
+.ph{
+  background:var(--ph-bg); color:var(--ph-fg);
+  padding:1px 8px; border-radius:6px; font-weight:600;
+  display:inline-block; direction:rtl; unicode-bidi:plaintext;
+}
+
+/* ─── التذييل ─── */
+.footer-divider{width:60px; height:3px; background:var(--brand-soft); margin:0 auto 16px; border-radius:2px}
+footer{
+  text-align:center; color:var(--text-muted); font-size:.9rem; margin-top:8px;
+}
+footer .brand{color:var(--brand-link); margin-top:4px}
+
+/* ─── تبديل اللغة ─── */
+.lang-en{display:none}
+html[lang="ar"] .lang-en{display:none !important}
+html[lang="en"] .lang-ar{display:none !important}
+html[lang="en"] .lang-en{display:block}
+html[lang="en"] span.lang-en,html[lang="en"] a.lang-en{display:inline}
+html[lang="en"] li.lang-en{display:list-item}
+html[lang="en"] thead th.lang-en{display:table-cell}
+html[lang="en"] tbody td.lang-en{display:table-cell}
+
+/* ─── حركة مخففة ─── */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important; animation:none !important}
+  html{scroll-behavior:auto}
+}
+
+/* ─── طباعة ─── */
+@media print{
+  .circle-deco{display:none}
+  header .logo-box{box-shadow:none}
+  section{box-shadow:none; border:none; padding:0; margin:0 0 18px}
+  body{background:#fff; font-size:12pt}
+  a{color:inherit}
+  .topbar button{display:none}
+}
+
+/* ─── شاشات صغيرة (320px+) ─── */
+@media (max-width:600px){
+  body{font-size:16px}
+  .header h1{font-size:1.5rem}
+  .wrap{padding:24px 14px 56px}
+  section{padding:20px 16px}
+  table{font-size:.88rem}
+}
+</style>
+<noscript><style>
+html[lang="ar"] .lang-en{display:none !important}
+</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#content">تخطَّ إلى المحتوى</a>
+
+<div class="page">
+  <div class="circle-deco" aria-hidden="true"></div>
+
+  <div class="wrap" id="content">
+
+    <div class="topbar">
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language">English</button>
+    </div>
+
+    <header class="header">
+      <div class="logo-box">
+        <!-- ضع هنا: <img src="logo.png" alt="شعار الكيان الرقمي"> -->
+      </div>
+      <h1>
+        <span class="lang-ar">الكيان الرقمي</span>
+        <span class="lang-en">Digital Entity</span>
+      </h1>
+      <p class="subtitle">
+        <span class="lang-ar">سياسة الخصوصية</span>
+        <span class="lang-en">Privacy Policy</span>
+      </p>
+      <p class="updated">
+        <span class="lang-ar">آخر تحديث: 6 أكتوبر 2026 &nbsp;•&nbsp; النسخة: v1.1</span>
+        <span class="lang-en">Last updated: October 6, 2026 &nbsp;•&nbsp; Version: v1.1</span>
+      </p>
+    </header>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>
+        <span class="lang-ar">محتويات الصفحة</span>
+        <span class="lang-en">Contents</span>
+      </h2>
+      <ul>
+        <li><a href="#who"><span class="lang-ar">من نحن</span><span class="lang-en">Who We Are</span></a></li>
+        <li><a href="#collect"><span class="lang-ar">البيانات التي نجمعها</span><span class="lang-en">Information We Collect</span></a></li>
+        <li><a href="#use"><span class="lang-ar">كيف نستخدم البيانات</span><span class="lang-en">How We Use Data</span></a></li>
+        <li><a href="#sharing"><span class="lang-ar">مشاركة البيانات مع أطراف ثالثة</span><span class="lang-en">Sharing with Third Parties</span></a></li>
+        <li><a href="#permissions"><span class="lang-ar">الأذونات التي يطلبها التطبيق</span><span class="lang-en">App Permissions</span></a></li>
+        <li><a href="#retention"><span class="lang-ar">مدة الاحتفاظ بالبيانات</span><span class="lang-en">Data Retention</span></a></li>
+        <li><a href="#security"><span class="lang-ar">أمن البيانات</span><span class="lang-en">Data Security</span></a></li>
+        <li><a href="#rights"><span class="lang-ar">حقوق المستخدم</span><span class="lang-en">Your Rights</span></a></li>
+        <li><a href="#delete-account"><span class="lang-ar">حذف الحساب والبيانات</span><span class="lang-en">Account & Data Deletion</span></a></li>
+        <li><a href="#children"><span class="lang-ar">خصوصية الأطفال</span><span class="lang-en">Children's Privacy</span></a></li>
+        <li><a href="#transfer"><span class="lang-ar">نقل البيانات خارج بلد المستخدم</span><span class="lang-en">International Data Transfers</span></a></li>
+        <li><a href="#changes"><span class="lang-ar">التغييرات على السياسة</span><span class="lang-en">Changes to This Policy</span></a></li>
+        <li><a href="#contact"><span class="lang-ar">التواصل</span><span class="lang-en">Contact</span></a></li>
+      </ul>
+    </nav>
+
+    <!-- ══════════════ 1. من نحن ══════════════ -->
+    <section id="who">
+      <h2>
+        <span class="num">1</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"></path><path d="M12 12a2 2 0 100-4 2 2 0 000 4z"></path><path d="M8 16c.8-1.2 2.2-2 4-2s3.2.8 4 2"></path></svg>
+        <span class="lang-ar">من نحن</span>
+        <span class="lang-en">Who We Are</span>
+      </h2>
+      <div class="lang-ar">
+        <p>نحن ندير منصة انصراف مدرسي تتيح لولي الأمر طلب استلام طالبه من المدرسة، وتتيح للمعلم والإدارة متابعة حالة الانصراف، وتعرض الشاشات الذكية داخل المدرسة تحديثات البوابة لحظيًا.</p>
+        <ul>
+          <li>الجهة المسؤولة: <strong>الكيان الرقمي (Digital Entity)</strong></li>
+          <li>عنوان الجهة: <span class="ph">[[يلزم تحديد: العنوان البريدي الرسمي (السؤال 2)]]</span></li>
+          <li>بريد التواصل بالخصوصية: <span class="ph">[[يلزم تحديد: بريد الاستفسارات والخصوصية (السؤال 3)]]</span></li>
+          <li>الاسم التجاري: <strong>الكيان الرقمي</strong> — نطاق الخدمة: <strong>alkyan.tech</strong></li>
+        </ul>
+      </div>
+      <div class="lang-en">
+        <p>We operate a school pickup platform that lets a parent request pickup of their child, lets the teacher and administration follow the pickup status, and lets smart screens inside the school display gate updates in real time.</p>
+        <ul>
+          <li>Responsible entity: <strong>Digital Entity (الكيان الرقمي)</strong></li>
+          <li>Mailing address: <span class="ph">[[يلزم تحديد: official address (Q2)]]</span></li>
+          <li>Privacy contact email: <span class="ph">[[يلزم تحديد: privacy email (Q3)]]</span></li>
+          <li>Brand name: <strong>Digital Entity</strong> – service domain: <strong>alkyan.tech</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ 2. البيانات التي نجمعها ══════════════ -->
+    <section id="collect">
+      <h2>
+        <span class="num">2</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M8 9h8M8 13h5"></path></svg>
+        <span class="lang-ar">البيانات التي نجمعها</span>
+        <span class="lang-en">Information We Collect</span>
+      </h2>
+
+      <h3 class="lang-ar">أ. بيانات يقدمها المستخدم</h3>
+      <h3 class="lang-en">a. Data you provide</h3>
+      <div class="lang-ar">
+        <ul>
+          <li>الاسم الكامل لحساب ولي الأمر أو المعلم أو المدير (<code>User.full_name</code>).</li>
+          <li>رقم الهاتف (<code>User.phone</code>) – وهو معرّف تسجيل الدخول.</li>
+          <li>الرقم الوطني أو رقم الهوية/الجواز (<code>User.national_id</code>) – يُستخدم خصيصًا عند إعادة تعيين كلمة المرور.</li>
+          <li>كلمة المرور – تُخزَّن مُشفَّرة داخل الخادم ولا تُعرض أبدًا.</li>
+          <li>الاسم الكامل للطالب (<code>Student.full_name</code>) وكوده الداخلي (<code>Student.student_code</code>) – يُدخلها طاقم المدرسة.</li>
+          <li>اسم المدرسة والصف/الفصل (<code>School</code>, <code>SchoolClass</code>).</li>
+          <li>ربطا الطالب بولي الأمر (<code>StudentParent</code>) وسجل اعتماد ولي الأمر لدى المدرسة (<code>ParentSchool</code>).</li>
+          <li>هاتف ولي الأمر المستورد عند تعبئة الحسابات من إدارة المدرسة (استيراد داخلي).</li>
+        </ul>
+      </div>
+      <div class="lang-en">
+        <ul>
+          <li>Full name of the parent/teacher/manager account (<code>User.full_name</code>).</li>
+          <li>Phone number (<code>User.phone</code>) – used as the login identifier.</li>
+          <li>National ID or identity/passport number (<code>User.national_id</code>) – used specifically for password reset.</li>
+          <li>Password – stored hashed on the server and never displayed.</li>
+          <li>Student's full name (<code>Student.full_name</code>) and internal code (<code>Student.student_code</code>) – entered by school staff.</li>
+          <li>School name and class (<code>School</code>, <code>SchoolClass</code>).</li>
+          <li>Student–parent links (<code>StudentParent</code>) and the parent's school approval record (<code>ParentSchool</code>).</li>
+          <li>Parent phone numbers imported when school staff populate accounts (internal import).</li>
+        </ul>
+      </div>
+
+      <h3 class="lang-ar">ب. بيانات تُجمع تلقائيًا أثناء الاستخدام</h3>
+      <h3 class="lang-en">b. Data collected automatically during use</h3>
+      <div class="lang-ar">
+        <ul>
+          <li>سجلات طلبات الاستلام: الطالب، ولي الأمر، المدرسة، الحالة، والطوابع الزمنية (إنشاء/قبول/إكمال/إلغاء) (<code>PickupRequest</code>).</li>
+          <li>حالة الانصراف الحالية للطالب: حاضر / مطلوب استلام / عند البوابة / تم التسليم (<code>Student.status</code>).</li>
+          <li><strong>إحداثيات موقع ولي الأمر</strong> عند إنشاء طلب استلام إذا كانت مدرسته مفعّلة على التحقق الجغرافي: تُستخدم <strong>للتحقق من القرب فقط</strong>، والخادم <strong>لا يحفظ</strong> إحداثيات الطلب في سجل الطلبات.</li>
+          <li>توكنات الدخول (JWT) القصيرة التي يصدرها الخادم بعد تسجيل الدخول.</li>
+        </ul>
+        <p>ملاحظة: لا توجد أبحاث استخدام أو تحليلات داخل الخادم.</p>
+      </div>
+      <div class="lang-en">
+        <ul>
+          <li>Pickup request records: student, parent, school, status, and timestamps (created/accepted/completed/cancelled) (<code>PickupRequest</code>).</li>
+          <li>Student's current pickup status: present / requested / at gate / delivered (<code>Student.status</code>).</li>
+          <li><strong>The parent's location coordinates</strong> when creating a pickup request, if the school has geographic verification enabled: used <strong>only to check proximity</strong>, and the server <strong>does not store</strong> the request coordinates in the request log.</li>
+          <li>Short-lived login tokens (JWT) issued by the server after sign-in.</li>
+        </ul>
+        <p>Note: the server contains no usage analytics.</p>
+      </div>
+
+      <h3 class="lang-ar">ج. بيانات الجهاز</h3>
+      <h3 class="lang-en">c. Device data</h3>
+      <div class="lang-ar">
+        <p>لا يجمع الخادم أي معرّف جهاز أو توكن إشعارات أو نظام تشغيل. ما يُخزَّن على الجهاز نفسه (مثل توكن الدخول) يُحدَّد من تطبيق الهاتف:
+        <span class="ph">[[يلزم تحديد: أين يُحفظ JWT في تطبيق Flutter – SharedPreferences أم تخزين آمن (السؤال 28)]]</span></p>
+      </div>
+      <div class="lang-en">
+        <p>The server collects no device identifiers, push tokens, or operating-system data. What is stored on the device itself (such as the login token) depends on the mobile app:
+        <span class="ph">[[يلزم تحديد: where the JWT is stored in the Flutter app – SharedPreferences vs secure storage (Q28)]]</span></p>
+      </div>
+
+      <h3 class="lang-ar">د. ما لا نجمعه</h3>
+      <h3 class="lang-en">d. What we do not collect</h3>
+      <div class="lang-ar">
+        <ul>
+          <li>لا نجمع عنوان بريد إلكتروني في النماذج الحالية.</li>
+          <li>لا نجمع صور شخصية ولا صور بكاميرا داخل الخادم.</li>
+          <li>لا نجمع عنوان سكن أو رقم لوحة سيارة أو تاريخ ميلاد.</li>
+          <li>لا نستخدم حسابات إعلانية أو SDK تتبع في الخادم.</li>
+        </ul>
+      </div>
+      <div class="lang-en">
+        <ul>
+          <li>We do not collect an email address in the current forms.</li>
+          <li>We do not collect personal photos or camera images on the server.</li>
+          <li>We do not collect home address, license plate number, or date of birth.</li>
+          <li>We use no advertising accounts or tracking SDKs on the server.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ 3. كيف نستخدم البيانات ══════════════ -->
+    <section id="use">
+      <h2>
+        <span class="num">3</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"></path><path d="M12 7v5l3 2"></path></svg>
+        <span class="lang-ar">كيف نستخدم البيانات</span>
+        <span class="lang-en">How We Use Data</span>
+      </h2>
+      <div class="lang-ar">
+        <ul>
+          <li>إنشاء الحساب والتحقق من الهوية وتسجيل الدخول.</li>
+          <li>ربط الطالب بولي الأمر وتأكيد أن ولي الأمر معتمد لدى المدرسة.</li>
+          <li>استلام طلب الانصراف والتحقق من القرب أو رمز البوابة حسب إعدادات المدرسة.</li>
+          <li>عرض حالة الانصراف للمعلم وولي الأمر والشاشة داخل المدرسة.</li>
+          <li>إدارة حسابات المعلمين والمديرين والفصول والشاشات.</li>
+          <li>تسهيل إعادة تعيين كلمة المرور بعد التحقق من الهاتف + الرقم الوطني.</li>
+          <li>أمن النظام: منع الطلبات غير المصرح بها وعزل بيانات كل مدرسة عن الأخرى.</li>
+        </ul>
+      </div>
+      <div class="lang-en">
+        <ul>
+          <li>Create the account, verify identity, and sign in.</li>
+          <li>Link the student to the parent and confirm the parent is approved by the school.</li>
+          <li>Process pickup requests and verify proximity or the gate code per the school's settings.</li>
+          <li>Display pickup status to the teacher, the parent, and the in-school screen.</li>
+          <li>Manage teacher, manager, class, and screen accounts.</li>
+          <li>Enable password reset after verifying phone + national ID.</li>
+          <li>Secure the system: block unauthorized requests and isolate each school's data from other schools.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ 4. مشاركة البيانات ══════════════ -->
+    <section id="sharing">
+      <h2>
+        <span class="num">4</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="7" r="2.5"></circle><circle cx="12" cy="18" r="2.5"></circle><path d="M8 7.5l7 8M17 9l-4 7"></path></svg>
+        <span class="lang-ar">مشاركة البيانات مع أطراف ثالثة</span>
+        <span class="lang-en">Sharing with Third Parties</span>
+      </h2>
+      <div class="lang-ar">
+        <p>لا يشارك خادم التطبيق بياناتك مع أي جهة تسويق أو إعلان أو تحليلات. لا توجد خدمات بريد أو رسائل قصيرة أو إشعارات خارجية مضافة في الشيفرة. تشغيل الخدمة يعتمد على مزوّدين تقنيين يعالَلون البيانات نيابةً عننا فقط:</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>الخدمة</th><th>الغرض</th><th>ما تشاركه</th><th>سياسة الخصوصية</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>PostgreSQL (قاعدة البيانات)</td>
+                <td>تخزين بيانات الحسابات والطلبات</td>
+                <td>كل البيانات المذكورة أعلاه تُخزَّن فيها</td>
+                <td><a href="https://contabo.com/en-us/legal/privacy/" rel="noopener">سياسة الخصوصية (الاستضافة: Contabo)</a></td>
+              </tr>
+              <tr>
+                <td>Redis (البث اللحظي)</td>
+                <td>تمرير رسائل WebSocket للشاشات والمعلمين</td>
+                <td>قد تحمل مؤقتًا أسماء طلاب وحالات أثناء البث</td>
+                <td>لا ينطبق – Redis قياسية تُشغَّل ذاتيًا مع الخادم (لا مزوّد خارجي)</td>
+              </tr>
+              <tr>
+                <td>Contabo (استضافة الخادم – فرانكفورت، ألمانيا)</td>
+                <td>تشغيل الخادم وقواعد البيانات</td>
+                <td>حركة الطلبات والبيانات المخزّنة</td>
+                <td><a href="https://contabo.com/en-us/legal/privacy/" rel="noopener">سياسة خصوصية Contabo</a></td>
+              </tr>
+              <tr>
+                <td>Cloudflare (شبكة توصيل وحماية – وفق تعليقات الإعدادات)</td>
+                <td>تسليم الحركة وحماية النطاق</td>
+                <td>حركة المرور العامة بما فيها الطلبات الشخصية</td>
+                <td><a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare Privacy Policy</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>لا تُشارك البيانات مع مدرسة أخرى إلا ضمن حساب ولي الأمر المرتبط بها.</p>
+      </div>
+      <div class="lang-en">
+        <p>The application server does not share your data with any marketing, advertising, or analytics company. There are no email, SMS, or external push services in the code. The service runs on technical providers that process data only on our behalf:</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Service</th><th>Purpose</th><th>What it receives</th><th>Privacy policy</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>PostgreSQL (database)</td>
+                <td>Stores account and request data</td>
+                <td>All data listed above is stored there</td>
+                <td><a href="https://contabo.com/en-us/legal/privacy/" rel="noopener">Privacy policy (hosting: Contabo)</a></td>
+              </tr>
+              <tr>
+                <td>Redis (realtime delivery)</td>
+                <td>Carries WebSocket messages to screens and teachers</td>
+                <td>May temporarily hold student names and statuses during delivery</td>
+                <td>Not applicable – standard Redis run with the server (no external provider)</td>
+              </tr>
+              <tr>
+                <td>Contabo (server hosting – Frankfurt, Germany)</td>
+                <td>Runs the server and databases</td>
+                <td>All request traffic and stored data</td>
+                <td><a href="https://contabo.com/en-us/legal/privacy/" rel="noopener">Contabo Privacy Policy</a></td>
+              </tr>
+              <tr>
+                <td>Cloudflare (delivery & protection network – per settings comments)</td>
+                <td>Traffic delivery and domain protection</td>
+                <td>Public traffic including personal requests</td>
+                <td><a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare Privacy Policy</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Data is not shared with another school except within a parent's account that is linked to that school.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════ 5. الأذونات ══════════════ -->
+    <section id="permissions">
+      <h2>
+        <span class="num">5</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 018 0v3"></path></svg>
+        <span class="lang-ar">الأذونات التي يطلبها التطبيق ولماذا</span>
+        <span class="lang-en">App Permissions</span>
+      </h2>
+      <div class="lang-ar">
+        <p>لا يجمع الخادم أي أذونات من الجهاز. الأذونات نفسها تُطلب من تطبيق الهاتف، وما يُستنتَج من واجهة الخادم هو:</p>
+        <ul>
+          <li><strong>موقع الجهاز (GPS):</strong> يُستنتج لأن خادم الاستلام يقبل إحداثيات <code>lat/lng</code> عند اختيار التحقق الجغرافي، وتُستخدم فقط للتحقق من قرب ولي الأمر من المدرسة قبل إنشاء الطلب. المدرسة تحدد الطريقة: جغرافي / باركود / واي فاي.</li>
+          <li><strong>الكاميرا (باركود):</strong> يُستنتج من خيار «باركود» ومقارنته برمز المدرسة العام.</li>
+        </ul>
+        <p>الأذونات المُصرَّح بها فعليًا في ملفات التطبيق يجب تأكيدها من مشروع الهاتف:
+        <span class="ph">[[يلزم تحديد: الأذونات الفعلية من AndroidManifest.xml وInfo.plist (السؤال 27)]]</span></p>
+      </div>
+      <div class="lang-en">
+        <p>The server itself requests no device permissions. Permissions are requested by the mobile app; what can be inferred from the server API is:</p>
+        <ul>
+          <li><strong>Device location (GPS):</strong> inferred because the pickup endpoint accepts <code>lat/lng</code> when geographic verification is chosen, used only to check that the parent is near the school before creating a request. Each school chooses: geographic / barcode / Wi-Fi.</li>
+          <li><strong>Camera (barcode):</strong> inferred from the "barcode" option compared against the school's public code.</li>
+        </ul>
+        <p>The permissions actually declared in the app files must be confirmed from the mobile project:
+        <span class="ph">[[يلزم تحديد: actual permissions from AndroidManifest.xml and Info.plist (Q27)]]</span></p>
+      </div>
+    </section>
+
+    <!-- ══════════════ 6. مدة الاحتفاظ ══════════════ -->
+    <section id="retention">
+      <h2>
+        <span class="num">6</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+        <span class="lang-ar">مدة الاحتفاظ بالبيانات</span>
+        <span class="lang-en">Data Retention</span>
+      </h2>
+      <div class="lang-ar">
+        <div class="card">
+          <p><strong>لا توجد حاليًا مدة احتفاظ معلنة أو مُطبَّقة آليًا في الخادم</strong> لسجلات الانصراف أو بيانات الطلاب. لا يحذف النظام أي سجل تلقائيًا؛ أمر اليوم الدراسي يعيد حالة الطالب إلى «حاضر» ويغلق الطلبات المفتوحة دون حذف السجلات.</p>
+          <p><strong>مدة الاحتفاظ:</strong> تُحذف بيانات الطالب عند تخرجه أو انتقاله/تغيّر مدرسته.</p>
+          <p><strong>النسخ الاحتياطية:</strong> لا توجد نسخ احتياطية في الوقت الراهن؛ ستُضاف مستقبلًا، ويصل إليها مدير المدرسة فقط.</p>
+          <p><strong>صلاحية الحذف النهائي:</strong> مدير المدرسة فقط – حتى المستخدم (ولي الأمر) لا يستطيع حذف حسابه بنفسه.</p>
+        </div>
+      </div>
+      <div class="lang-en">
+        <div class="card">
+          <p><strong>There is currently no announced or automatically enforced retention period</strong> in the server for pickup records or student data. The system never deletes records on its own; the school-day reset returns each student's status to "present" and closes open requests without deleting the records.</p>
+          <p><strong>Retention:</strong> a student's data is deleted upon graduation or change of school.</p>
+          <p><strong>Backups:</strong> there are no backups at present; they will be added in the future and only the school manager will access them.</p>
+          <p><strong>Final deletion authority:</strong> the school manager only – even the user (parent) cannot delete their own account.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 7. أمن البيانات ══════════════ -->
+    <section id="security">
+      <h2>
+        <span class="num">7</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"></path><path d="M12 11v3M12 16.5h.01"></path></svg>
+        <span class="lang-ar">أمن البيانات</span>
+        <span class="lang-en">Data Security</span>
+      </h2>
+      <div class="lang-ar">
+        <ul>
+          <li>بيانات الحسابات والطلبات تُخزَّن في قاعدة بيانات على الخادم.</li>
+          <li>كلمات المرور تُخزَّن مُشفَّرة عبر دوال Django التأهيلية ولا تُعرض لأحد.</li>
+          <li>تسجيل الدخول عبر توكنات JWT قصيرة العمر تُبطل عند تسجيل الخروج.</li>
+          <li>عزل صلاحيات: كل مستخدم يرى فقط ما يخصه حسب دوره ومدرسته/فصله.</li>
+          <li>الاتصال بالخادم عبر HTTPS في بيئة الإنتاج.</li>
+          <li>لا يوجد تشفير على القرص (at-rest) للقاعدة أو النسخ الاحتياطية سوى التشفيرات الأساسية للتطبيق.</li>
+        </ul>
+      </div>
+      <div class="lang-en">
+        <ul>
+          <li>Account and request data is stored in a database on the server.</li>
+          <li>Passwords are stored hashed using Django's password functions and are never shown.</li>
+          <li>Sign-in uses short-lived JWT tokens that are blacklisted at logout.</li>
+          <li>Permission isolation: each user sees only what belongs to their role and school/class.</li>
+          <li>Connections to the server use HTTPS in production.</li>
+          <li>There is no encryption at rest for the database or backups beyond the application's basic built-in encryption.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ 8. حقوق المستخدم ══════════════ -->
+    <section id="rights">
+      <h2>
+        <span class="num">8</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v6c0 4-3 7-8 8-5-1-8-4-8-8V7l8-4z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        <span class="lang-ar">حقوق المستخدم</span>
+        <span class="lang-en">Your Rights</span>
+      </h2>
+      <div class="lang-ar">
+        <ul>
+          <li><strong>الاطلاع:</strong> يمكنك معرفة بيانات أبنائك وحالة انصرافهم عبر حسابك في التطبيق (الطلاب المعتمدين فقط).</li>
+          <li><strong>التصحيح:</strong> بيانات الطالب الإدارية تُعدَّل من إدارة المدرسة؛ والمستخدم يغيّر كلمة مروره فقط (عبر التحقق بالرقم الوطني).</li>
+          <li><strong>الحذف:</strong> انظر القسم <a href="#delete-account">«حذف الحساب والبيانات»</a>.</li>
+          <li>يستطيع مدير المدرسة إيقاف (تعطيل) حساب أو حذف سجلات إدارية ضمن صلاحياته الداخلية.</li>
+          <li>لا يوجد تصدير بيانات آلي داخل التطبيق أو الويب – يُنفَّذ يدويًا فقط عند الطلب.</li>
+        </ul>
+      </div>
+      <div class="lang-en">
+        <ul>
+          <li><strong>Access:</strong> you can see your children's data and pickup status through your app account (approved students only).</li>
+          <li><strong>Correction:</strong> administrative student data is edited by school management; users may only change their own password (verified via national ID).</li>
+          <li><strong>Deletion:</strong> see the <a href="#delete-account">"Account & Data Deletion"</a> section.</li>
+          <li>A school manager can disable an account or delete administrative records within their internal permissions.</li>
+          <li>There is no automated data export inside the app or web – it is done manually on request only.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ 9. حذف الحساب ══════════════ -->
+    <section id="delete-account">
+      <h2>
+        <span class="num">9</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2M6 7l1 13a1 1 0 001 1h8a1 1 0 001-1l1-13"></path></svg>
+        <span class="lang-ar">حذف الحساب والبيانات</span>
+        <span class="lang-en">Account & Data Deletion</span>
+      </h2>
+      <div class="lang-ar">
+        <div class="card">
+          <h3>الطريقة الأولى: داخل التطبيق (ولي الأمر)</h3>
+          <p>لا توجد آلية حذف ذاتية: يُنشأ الحساب ويُحذف عبر إدارة المدرسة فقط، ولا يستطيع ولي الأمر حذف حسابه بنفسه.</p>
+          <h3>الطريقة الثانية: عبر إدارة المدرسة</h3>
+          <ol>
+            <li>تواصل مباشرةً مع إدارة المدرسة التابع لها الطالب لطلب الحذف.</li>
+            <li>اذكر: اسمك، رقم هاتفك، وطلبك («حذف حسابي وبيانات أبنائي» أو «نسخة من بياناتي»).</li>
+            <li>نؤكد هويتك ثم ننفّذ الطلب خلال <strong>يوم واحد فقط</strong>.</li>
+          </ol>
+          <p>تنبيه: تحتفظ المدرسة بالحسابات لأغراض المراجعة العامة، وتُزال بيانات الطالب عند التخرج أو تغيير المدرسة.</p>
+          <p>ملاحظة: لا يوجد بريد عام موحّد لطلبات الحذف؛ الإجراء يتم عبر إدارة المدرسة مباشرةً.</p>
+        </div>
+      </div>
+      <div class="lang-en">
+        <div class="card">
+          <h3>Option 1: Inside the app (parent)</h3>
+          <p>There is no self-service deletion: the account is created and deleted only through the school administration, and the parent cannot delete their own account.</p>
+          <h3>Option 2: Through the school administration</h3>
+          <ol>
+            <li>Contact the administration of the student's school directly to request deletion.</li>
+            <li>Include: your name, your phone number, and the request ("delete my account and my children's data" or "a copy of my data").</li>
+            <li>We will verify your identity and then carry out the request within <strong>one day only</strong>.</li>
+          </ol>
+          <p>Note: the school keeps accounts for general review purposes, and a student's data is removed upon graduation or change of school.</p>
+          <p>Note: there is no single public email for deletion requests; the process is handled directly through the school administration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 10. خصوصية الأطفال ══════════════ -->
+    <section id="children">
+      <h2>
+        <span class="num">10</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 21c0-4 3-6 7-6s7 2 7 6"></path></svg>
+        <span class="lang-ar">خصوصية الأطفال</span>
+        <span class="lang-en">Children's Privacy</span>
+      </h2>
+      <div class="lang-ar">
+        <ul>
+          <li>الخدمة تُدير بيانات طلاب قاصرين ضمن سياق مدرسي بطلب المدرسة.</li>
+          <li>الوصول إلى بيانات الطالب مقصور على: ولي أمر معتمد لدى المدرسة، معلم الفصل، مدير المدرسة للصلاحيات الإدارية، والشاشة الذكية المرتبطة بصف محدد.</li>
+          <li>لا يستطيع الطالب إنشاء حساب بنفسه؛ يُنشأ الحساب ويُربط من إدارة المدرسة.</li>
+          <li>اعتماد المدرسة لولي الأمر شرط لرؤية بيانات الأبناء؛ وموافقة ولي الأمر على معالجة بيانات طفله تتم <strong>عبر إدارة المدرسة</strong>.</li>
+          <li>متطلبات قوانين الأطفال تُطبَّق وفق السوق المستهدف: <strong>السعودية</strong> (ويخضع لسياسة Families في Google Play حسب جمهور المتجر).</li>
+        </ul>
+      </div>
+      <div class="lang-en">
+        <ul>
+          <li>The service processes minors' data in a school context at the school's request.</li>
+          <li>Access to student data is limited to: an approved parent, the class teacher, the school manager for administrative rights, and the smart screen linked to a specific class.</li>
+          <li>A student cannot create an account themselves; the account is created and linked by school management.</li>
+          <li>School approval of the parent is required before seeing children's data; parental consent to process a child's data is obtained <strong>through the school administration</strong>.</li>
+          <li>Children's-law requirements apply to the target market: <strong>Saudi Arabia</strong> (and the Google Play Families policy depending on the store audience).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ 11. نقل البيانات ══════════════ -->
+    <section id="transfer">
+      <h2>
+        <span class="num">11</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"></path></svg>
+        <span class="lang-ar">نقل البيانات خارج بلد المستخدم</span>
+        <span class="lang-en">International Transfers</span>
+      </h2>
+      <div class="lang-ar">
+        <p>قد تُخزَّن البيانات وتعالجها مزوّدون تقنيون خارج بلد المستخدم (خادم الاستضافة، قاعدة البيانات، شبكة التسليم). الاستضافة حاليًا لدى <strong>Contabo (فرانكفورت، ألمانيا)</strong> مع Cloudflare للحماية وفق تعليقات الإعدادات.</p>
+        <p><strong>موطن الخادم:</strong> أوروبا – فرانكفورت، ألمانيا (Contabo).</p>
+        <p><strong>القانون المنطبق:</strong> المملكة العربية السعودية (السوق المستهدف).</p>
+      </div>
+      <div class="lang-en">
+        <p>Data may be stored and processed by technical providers outside the user's country (hosting, database, delivery network). The service is currently hosted on <strong>Contabo (Frankfurt, Germany)</strong> with Cloudflare for protection per the settings comments.</p>
+        <p><strong>Server location:</strong> Europe – Frankfurt, Germany (Contabo).</p>
+        <p><strong>Applicable law:</strong> the Kingdom of Saudi Arabia (target market).</p>
+      </div>
+    </section>
+
+    <!-- ══════════════ 12. التغييرات ══════════════ -->
+    <section id="changes">
+      <h2>
+        <span class="num">12</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"></path></svg>
+        <span class="lang-ar">التغييرات على السياسة</span>
+        <span class="lang-en">Changes to This Policy</span>
+      </h2>
+      <div class="lang-ar">
+        <p>قد نحدّث هذه السياسة عند تغيير الخدمات أو المتطلبات القانونية. أي تغيير يُنشر على هذا الرابط مع تحديث تاريخ السريان ورقم النسخة.</p>
+        <ul>
+          <li>آخر تحديث: <strong>6 أكتوبر 2026</strong></li>
+          <li>النسخة: <strong>v1.1</strong></li>
+          <li>طريقة إشعار المستخدمين عند تغيير جوهري: <strong>اللغة العربية</strong> (السوق المستهدف: السعودية) مع نشر التغيير على هذه الصفحة.</li>
+        </ul>
+      </div>
+      <div class="lang-en">
+        <p>We may update this policy when services or legal requirements change. Any change is published on this page with an updated effective date and version number.</p>
+        <ul>
+          <li>Last updated: <strong>October 6, 2026</strong></li>
+          <li>Version: <strong>v1.1</strong></li>
+          <li>How users are notified of a material change: <strong>in Arabic</strong> (target market: Saudi Arabia), with the change published on this page.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ 13. التواصل ══════════════ -->
+    <section id="contact">
+      <h2>
+        <span class="num">13</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"></path><path d="M3 7l9 6 9-6"></path></svg>
+        <span class="lang-ar">التواصل</span>
+        <span class="lang-en">Contact</span>
+      </h2>
+      <div class="lang-ar">
+        <ul>
+          <li>لاستفسارات الخصوصية: <span class="ph">[[يلزم تحديد: بريد الخصوصية (السؤال 3)]]</span></li>
+          <li>لطلب حذف أو تصدير بياناتك: راجع <a href="#delete-account">حذف الحساب والبيانات</a> (عبر إدارة المدرسة)</li>
+          <li>للإبلاغ عن ثغرة أمنية تمس بيانات الطلاب: <span class="ph">[[يلزم تحديد: قناة الإبلاغ عن الثغرات (السؤال 37)]]</span></li>
+          <li>الجهة المسؤولة: <strong>الكيان الرقمي</strong> — العنوان: <span class="ph">[[يلزم تحديد: العنوان البريدي للجهة (السؤال 2)]]</span></li>
+        </ul>
+      </div>
+      <div class="lang-en">
+        <ul>
+          <li>Privacy questions: <span class="ph">[[يلزم تحديد: privacy email (Q3)]]</span></li>
+          <li>To request deletion or export of your data: see <a href="#delete-account">Account & Data Deletion</a> (through the school administration)</li>
+          <li>To report a security issue affecting children's data: <span class="ph">[[يلزم تحديد: security reporting channel (Q37)]]</span></li>
+          <li>Responsible entity: <strong>Digital Entity</strong> – address: <span class="ph">[[يلزم تحديد: entity address (Q2)]]</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer-divider" aria-hidden="true"></div>
+    <footer>
+      <p class="lang-ar">© جميع الحقوق محفوظة لعام 2026</p>
+      <p class="lang-en">© All rights reserved for the year 2026</p>
+      <p class="brand">الكيان الرقمي - Digital Entity</p>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('langBtn');
+  var html = document.documentElement;
+  function setLang(lang) {
+    html.lang = lang;
+    html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    btn.textContent = (lang === 'ar') ? 'English' : 'العربية';
+    try { localStorage.setItem('pp-lang', lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('pp-lang'); } catch (e) {}
+  if (saved === 'en') { setLang('en'); }
+  btn.addEventListener('click', function () {
+    setLang(html.lang === 'ar' ? 'en' : 'ar');
+  });
+})();
+</script>
+</body>
+</html>
